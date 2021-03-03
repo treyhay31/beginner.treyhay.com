@@ -1,29 +1,104 @@
-
-
-    <!doctype html>
-
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
 
-  <title>Beginner Class</title>
-  <meta name="description" content="The best">
+  <title>Start it up</title>
+  <meta name="description" content="Initial class">
   <meta name="author" content="Trey">
-
+  <link rel="stylesheet" href="styles/index.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <h1>Beginner Class</h1>
-  <div id="chat"></div>
-  <script src="https://rtcw-app.web.app/script.js" type="text/javascript"></script>
+  <main>
+    <section class="the-start">
+      <h1>
+        <span class="the-start--3">Start </span>
+        <span class="the-start--1">🌱</span>
+        <span class="the-start--1--2">t</span>
+        <span class="the-start--2"> up</span>
+      </h1>
+    </section>
+    
+    <section class="options hide">
+      <h2 class="options__item options__item--tools">Tools</h2>
+      <img class="options--bg-1" alt="tools" src="images/tools.svg" />
+      <h2 class="options__item options__item--sessions">Sessions</h2>
+      <img src="images/sessions.svg" alt="sessions" class="options--bg-2">
+      <nav class="options back"></nav>
+    </section>
+
+    <section class="options__tools hide">
+      <div class="options__tools--container">
+        <div class="options__tools--item options__tools--ide">
+          <h2><a href="https://repl.it/" target="_blank">repl.it</a></h2>
+        </div>
+        <div class="options__tools--item options__tools--deploy">
+          <h2><a href="https://www.netlify.com/" target="_blank">netlify</a></h2>
+        </div>
+        <div class="options__tools--item options__tools--resources">
+          <h3><a href="http://codingheroes.io/resources/" target="_blank">resources</a></h3>
+        </div>
+      </div>
+     
+      <nav class="options__tools back"></nav>
+    </section>
+
+    <section class="options__sessions hide">
+      <hgroup>
+        <h2 class="options__sessions--1-button">1</h2>
+        <h2 class="options__sessions--2-button">2</h2>
+        <h2 class="options__sessions--3-button">3</h2>
+      </hgroup>
+      <div class="options__sessions--session options__sessions--session-1 hide">
+        <div class="options__sessions--half-1">
+          <h3>Explain the tools</h3>
+        </div>
+        <div class="options__sessions--half-2">
+          <h3>HTML | CSS | JS</h3>
+        </div>
+      </div>
+      <div class="options__sessions--session options__sessions--session-2 hide">
+        <div class="options__sessions--half-1">
+          <h3>Challenge Accepted</h3>
+        </div>
+        <div class="options__sessions--half-2">
+          <h3>Code Solution</h3>
+        </div>
+      </div>
+      <div class="options__sessions--session options__sessions--session-3 hide">
+        <div class="options__sessions--half-1">
+          <h3>Demos & Alternatives</h3>
+        </div>
+        <div class="options__sessions--half-2">
+          <h3>Deploy & QA</h3>
+        </div>
+        <button class="options__sessions--bonus-button"><img src="/images/pray-yellow.svg" alt="navigate to bonus section button"></button>
+      </div>
+      <nav class="options__sessions back"></nav>
+    </section>
+  </main>
+  <div class="bonus">
+    <div class="bonus__prayer-req">
+      <input class="bonus__prayer-req--input" type="text">
+      <button class="bonus__prayer-req--add-button">+</button>
+    </div>
+    <nav class="bonus back"></nav>
+  </div>
+  <div class="chat-container">
+    <div id="chat"></div>
+  </div>
+</body>
+<script src="scripts/index.js" type="text/javascript"></script>
+<script src="https://rtcw-app.web.app/script.js" type="text/javascript"></script>
   <script>
     const config = {
       clientId: "Pd9DH74fflhS1hmf8nKpggtHSvj1",
-      chatsId: "thoughts.treyhay.com",
+      chatsId: "beginner.treyhay.com",
       user: null
     };
     const chat = document.getElementById("chat");
     chat.attachWidget(config);
   </script>
-</body>
 </html>
