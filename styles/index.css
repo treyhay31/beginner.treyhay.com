@@ -1,0 +1,477 @@
+:root {
+	--yellow: #FFCC4D;
+	--purple-dark: #391343;
+	--purple-light: #643482;
+}
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+	/*1rem = 10px*/
+	font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	background: linear-gradient(77deg, #391343, #643482);
+	color: var(--yellow);
+  overflow: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.hide {
+	position: absolute;
+	height: 0;
+	width: 0;
+	display: none;
+	visibility: hidden;
+}
+
+main {
+	width: 100%;
+	min-height: 100vh;
+	max-height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	place-items: center;
+	place-content: center;
+}
+
+nav.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+  height: 10vh;
+  width: 10vh;
+	cursor: pointer;
+	font-size: 9rem;
+	transition: all .2s;
+}
+
+nav.back:hover {
+	transform: translateY(.2rem);
+}
+
+nav.back:active {
+	transform: scale(.8);
+}
+
+nav.back.options::before {
+	content: '🌱';
+}
+
+nav.back.options__tools {
+  background-image: url(/images/tools.svg);
+  background-size: cover;
+}
+
+nav.back.options__sessions {
+  background-image: url(/images/sessions.svg);
+  background-size: cover;
+}
+
+.the-start {
+	font-size: 5rem;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.the-start h1 {
+	transition: all 1s;
+}
+
+.the-start h1:hover {
+	letter-spacing: 1rem;
+}
+
+.the-start--1 {
+	transition: all 1s;
+}
+
+.the-start h1:hover .the-start--1 {
+	font-size: 10rem;
+	letter-spacing: 1rem;
+}
+
+.options {
+	justify-self: start;
+	font-size: 4.5rem;
+}
+
+.options h2 {
+	position: relative;
+	cursor: pointer;
+	margin: 9rem 5rem;
+	transition: all 2s;
+}
+
+.options h2:hover {
+	color: var(--purple-dark);
+  text-fill-color: var(--purple-dark);
+	-webkit-text-fill-color: var(--purple-dark);
+  text-stroke: 1px var(--yellow);
+	-webkit-text-stroke: 1px var(--yellow);
+}
+.options h2:hover::after {
+  transform: skew(-20deg) translateX(5vw);
+}
+.options h2:hover + img {
+  transform: scale(0.7) rotate(40deg);
+}
+.options h2 + img {
+  transition: all .8s;
+}
+.options h2::after {
+	content: '';
+	position: absolute;
+	top: 3rem;
+	right: -18rem;
+	height: 5rem;
+	width: 5rem;
+	clip-path: polygon(0 0, 100% 50%, 0 100%, 0% 100%, 24% 50%, 0 0);
+	border-radius: 12px;
+	background-color: #ffcc4dc2;
+	pointer-events: none;
+	z-index: -1;
+  transition: all 1s;
+}
+
+.options--bg-1 {
+	position: absolute;
+	opacity: 0.5;
+	top: 0;
+	right: 0;
+	width: 36rem;
+	transform: translate(-11rem, 6rem);
+	z-index: -1;
+}
+
+.options--bg-2 {
+	position: absolute;
+	opacity: 0.5;
+	bottom: 0;
+	right: 0;
+	width: 36rem;
+	transform: translate(-12rem, -6rem);
+	z-index: -1;
+}
+
+.options__tools {
+	height: 100%;
+	width: 100%;
+}
+
+.options__tools--container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	justify-items: center;
+	padding-top: 10rem;
+}
+
+.options__tools--item {
+	height: 36rem;
+	width: 36rem;
+	background-position: center;
+}
+
+.options__tools--ide {
+	background-image: url(/images/ide.svg);
+}
+
+.options__tools--deploy {
+	margin-top: 3rem;
+	background-image: url(/images/deploy.svg);
+}
+
+.options__tools--resources {
+	background-image: url(/images/resources.svg);
+	background-repeat: no-repeat;
+	grid-column: 1 / span 2;
+	background-position: center top;
+}
+
+.options__tools--item h2 {
+	font-size: 6rem;
+	text-align: center;
+	transform: translateY(11rem);
+}
+
+.options__tools--deploy h2 {
+	transform: translate(-3rem, 8rem);
+}
+
+.options__tools--item h3 {
+	font-size: 4rem;
+	text-align: center;
+	padding-top: 5rem;
+}
+
+.options__tools--item h2 a,
+.options__tools--item h3 a {
+	text-decoration: none;
+	color: var(--yellow);
+}
+
+.options__tools--item {
+	transition: all .2s;
+}
+
+.options__tools--item:hover {
+	transform: scale(1.2);
+}
+
+.options__tools--item.options__tools--resources {
+	font-size: 4rem;
+	grid-column: 1 / span 2;
+}
+
+.options__sessions {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	align-items: center;
+	justify-items: center;
+}
+
+.options__sessions hgroup {
+	font-size: 7rem;
+	margin-top: 10rem;
+	grid-column: 1 / -1;
+}
+
+.options__sessions hgroup.minimize {
+	transform: scale(0.3);
+	position: absolute;
+	grid-column: 1 / 1;
+	grid-row: 1 / -1;
+}
+
+.show-session {
+	grid-row: 1 / -1;
+	grid-column: 2 / -1;
+	grid-row-gap: 21rem;
+	align-self: center;
+	font-size: 10rem;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
+	justify-items: start;
+}
+
+.highlight {
+	background-color: var(--yellow);
+	color: var(--purple-dark);
+}
+
+.options__sessions h2 {
+	border: 1rem solid var(--yellow);
+	width: 3ch;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	transition: .3s;
+	cursor: pointer;
+}
+
+.options__sessions h2:hover {
+	transform: scale(1.2);
+	margin: 2rem;
+}
+
+.show-session h3 {
+	padding-left: 4ch;
+	transform: translateY(2rem);
+}
+
+.options__sessions--session {
+	grid-column: 2/-1;
+	align-self: center;
+	justify-self: start;
+	font-size: 7rem;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-row-gap: 19vh;
+}
+
+.options__sessions--half-1,
+.options__sessions--half-2 {
+	position: relative;
+	height: 22rem;
+}
+
+.options__sessions--half-1::before,
+.options__sessions--half-2::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 19rem;
+	width: 16rem;
+	background-image: url(/images/sessions-bg-first-half.svg);
+	background-repeat: no-repeat;
+	background-position: center left;
+	opacity: 0.7;
+}
+
+.options__sessions--half-2::before {
+	background-image: url(/images/sessions-bg-second-half.svg);
+}
+
+.options__sessions--bonus-button {
+	outline: none;
+	background-color: transparent;
+	position: absolute;
+	top: 40vh;
+	right: 5vw;
+	height: 7rem;
+	width: 2rem;
+	transform: rotate(90deg);
+	border: none;
+	cursor: pointer;
+}
+
+.options__sessions--bonus-button img {
+	height: inherit;
+	filter: blur(3px);
+	-webkit-filter: blur(3px);
+}
+
+.options__sessions--session-3-bonus {
+	width: 100%;
+	height: 100%;
+}
+
+.hourglass-bg {
+	background-image: url(/images/sessions-hourglass.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto;
+}
+
+.pray-bg {
+	background-image: url(/images/pray.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: auto;
+}
+
+.bonus {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 2;
+}
+
+.bonus__exit {
+	height: 6rem;
+	width: 6rem;
+	justify-self: center;
+	align-self: start;
+	border-radius: 1000px;
+	outline: none;
+	background-color: #ffffff69;
+	background-image: url(/images/sessions.svg);
+	background-repeat: no-repeat;
+	background-size: 3rem;
+	background-position: center center;
+	padding: 1rem;
+	cursor: pointer;
+	z-index: 3;
+}
+
+.overlay {
+	backdrop-filter: blur(13px);
+	display: grid;
+	grid-template-columns: 10vw 90vw;
+	grid-template-rows: 20vh 80vh;
+	grid-gap: 1rem;
+}
+
+.bonus__prayer-req {
+  grid-column: 2/-1;
+  grid-row: 1/1;
+  justify-self: center;
+  align-self: center;
+}
+
+.bonus__prayer-req--input {
+	height: 9rem;
+	width: 50vw;
+	background: linear-gradient(to bottom, transparent, #ffffff20);
+	outline: none;
+	border: none;
+	border-bottom-left-radius: 20px;
+	color: var(--yellow);
+	font-size: 4rem;
+	padding: 0 1rem;
+}
+
+.bonus__prayer-req--add-button {
+	height: 12rem;
+  width: 12rem;
+	border: none;
+	outline: none;
+	border-radius: 120px;
+	background-color: var(--yellow);
+	transform: translateX(-5rem);
+	cursor: pointer;
+	color: var(--purple-dark);
+	font-size: 6rem;
+	padding: 0 1rem;
+}
+
+.bonus__prayer-req--list {
+	grid-column: 2/-1;
+	grid-row: 2/-1;
+	color: var(--yellow);
+	font-size: 4rem;
+}
+
+.bonus__prayer-req--list ul {
+  list-style: inside;
+  padding-left: 15rem;
+}
+
+.chatty-kathy {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+  height: 7rem;
+  width: 7rem;
+	border-radius: 50%;
+	background: var(--yellow);
+  background-image: url(/images/chat.svg);
+  background-size: 3rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+	margin: 1rem;
+  cursor: pointer;
+}
+
+.chatty-kathy.on {
+  height: 80vh;
+  width: 40vw;
+}
+
+#chat {
+	position: absolute;
+}
+
+#chat.on {
+  position: relative;
+  height: 100%;  
+  width: 100%;  
+}
