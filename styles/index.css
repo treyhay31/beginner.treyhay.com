@@ -459,19 +459,20 @@ nav.back.options__sessions {
   background-repeat: no-repeat;
 	margin: 1rem;
   cursor: pointer;
+  outline: none;
 }
 
-.chatty-kathy.on {
-  height: 80vh;
-  width: 40vw;
+.chatty-kathy.on  {
+  background-image: url(/images/zipper.svg);
 }
 
-#chat {
-	position: absolute;
-}
+/* #chat {} */
 
 #chat.on {
-  position: relative;
-  height: 100%;  
-  width: 100%;  
+  position: absolute;
+  height: calc(100vh - 14rem);
+  width: 40vh;
+  right: 2rem;
+  bottom: 9.5rem;
+  box-shadow: 0 -10rem 15rem 10rem var(--purple-dark);
 }

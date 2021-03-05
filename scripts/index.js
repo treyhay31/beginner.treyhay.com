@@ -31,6 +31,9 @@
         const e2 = document.querySelector(el2); //options__tools
         e1.addEventListener("click", () => {
             setTimeout(() => {
+                if (el1 === "section.the-start") {
+                  document.querySelector(".chatty-kathy").classList.toggle("hide", false);
+                }
                 e2.classList.toggle("hide", false);
                 sectionsToHide.forEach(el => el.classList.toggle("hide", true));
                 document.querySelector("main").className = bg
@@ -101,6 +104,7 @@
     connectSessionElements(1, [2, 3])
     connectSessionElements(2, [1, 3])
     connectSessionElements(3, [1, 2])
+    
     let is_chatting = false;
     document.querySelector(".chatty-kathy").addEventListener("click", () => {
       const chatty_kathy = document.querySelector(".chatty-kathy")
@@ -108,16 +112,19 @@
       is_chatting = !is_chatting
       chatty_kathy.classList.toggle("on", is_chatting)
       chat.classList.toggle("on", is_chatting)
+      chat.classList.toggle("hide", !is_chatting)
     })
     
     document.querySelector("button.options__sessions--bonus-button").addEventListener("click", () => {
         document.querySelector("main").className = "pray-bg"
         document.querySelector("div.bonus").classList.toggle("overlay", true)
+        document.querySelector("div.bonus").classList.toggle("hide", false)
         document.querySelector(".bonus__prayer-req--input").focus()
     })
     document.querySelector(".bonus__exit").addEventListener("click", () => {
         document.querySelector("main").className = "hourglass-bg"
         document.querySelector("div.bonus").classList.toggle("overlay", false)
+        document.querySelector("div.bonus").classList.toggle("hide", true)
     })
 
     const addItemToList = () => {
