@@ -474,7 +474,7 @@ nav.back.options__sessions {
 #chat.on {
   position: absolute;
   height: calc(100vh - 14rem);
-  width: 40vh;
+  width: 34vw;
   right: 2rem;
   bottom: 9.5rem;
   box-shadow: 0 -10rem 15rem 10rem var(--purple-dark);
