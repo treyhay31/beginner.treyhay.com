@@ -131,6 +131,8 @@
       const input = document.querySelector(".bonus__prayer-req--input");
       const list = document.querySelector(".bonus__prayer-req--list ul");
       
+      if (!input.value) return
+
       list.insertAdjacentHTML('beforeend',`<li></li>`);
       list.lastChild.textContent = input.value;
       input.value = "";

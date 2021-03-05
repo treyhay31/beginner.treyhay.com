@@ -61,7 +61,9 @@ nav.back:hover {
 nav.back:active {
 	transform: scale(.8);
 }
-
+nav.back.options {
+	top: -1.6rem;
+}
 nav.back.options::before {
 	content: '🌱';
 }
@@ -378,7 +380,7 @@ nav.back.options__sessions {
 .bonus__exit {
 	height: 6rem;
 	width: 6rem;
-	justify-self: center;
+	justify-self: start;
 	align-self: start;
 	border-radius: 1000px;
 	outline: none;
@@ -390,6 +392,7 @@ nav.back.options__sessions {
 	padding: 1rem;
 	cursor: pointer;
 	z-index: 3;
+  margin: 1rem 0 0 1rem;
 }
 
 .overlay {
