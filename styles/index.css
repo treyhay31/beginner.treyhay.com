@@ -11,9 +11,21 @@ html {
 	font-family: 'Titillium Web', sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 35%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  html {
+    font-size: 25%;
+  }
+}
+
 body {
 	min-height: 100vh;
-	background: linear-gradient(77deg, #391343, #643482);
+	background: linear-gradient(77deg, var(--purple-dark), var(--purple-light));
 	color: var(--yellow);
   overflow: hidden;
 }
@@ -79,7 +91,7 @@ nav.back.options__sessions {
 }
 
 .the-start {
-	font-size: 5rem;
+	font-size: 5vmax;
 	text-transform: uppercase;
 	cursor: pointer;
 }
@@ -472,9 +484,10 @@ nav.back.options__sessions {
 /* #chat {} */
 
 #chat.on {
-  position: absolute;
+  position: fixed;
   height: calc(100vh - 14rem);
   width: 34vw;
+  top: 2rem;
   right: 2rem;
   bottom: 9.5rem;
   box-shadow: 0 -10rem 15rem 10rem var(--purple-dark);
